@@ -1,19 +1,12 @@
-var Validator, getConstructor, isType;
+var Validator, getConstructor, isType, isTypeish;
 
 getConstructor = require("getConstructor");
 
 Validator = require("Validator");
 
 module.exports = isType = function(value, type) {
-  var i, len, subtype;
   if (Array.isArray(type)) {
-    for (i = 0, len = type.length; i < len; i++) {
-      subtype = type[i];
-      if (isType(value, subtype)) {
-        return true;
-      }
-    }
-    return false;
+    return isTypeish(value, type);
   }
   if (type instanceof Validator) {
     return type.test(value);
@@ -22,6 +15,17 @@ module.exports = isType = function(value, type) {
     return false;
   }
   return type === getConstructor(value);
+};
+
+isTypeish = function(value, types) {
+  var i, len, type;
+  for (i = 0, len = types.length; i < len; i++) {
+    type = types[i];
+    if (isType(value, type)) {
+      return true;
+    }
+  }
+  return false;
 };
 
 //# sourceMappingURL=../../map/src/isType.map

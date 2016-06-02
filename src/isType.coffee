@@ -6,8 +6,7 @@ module.exports =
 isType = (value, type) ->
 
   if Array.isArray type
-    return yes for subtype in type when isType value, subtype
-    return no
+    return isTypeish value, type
 
   if type instanceof Validator
     return type.test value
@@ -16,3 +15,7 @@ isType = (value, type) ->
     return no
 
   return type is getConstructor value
+
+isTypeish = (value, types) ->
+  return yes for type in types when isType value, type
+  return no
