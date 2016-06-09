@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "main": "js/src/isType",
   "dependencies": {
-    "getConstructor": "aleclarson/getConstructor#1.0.0",
     "Validator": "aleclarson/Validator#1.0.0"
   },
   "lotus": {

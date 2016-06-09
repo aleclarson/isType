@@ -1,21 +1,28 @@
 
-getConstructor = require "getConstructor"
 Validator = require "Validator"
 
 module.exports =
 isType = (value, type) ->
 
-  if Array.isArray type
-    return isTypeish value, type
-
   if type instanceof Validator
     return type.test value
 
-  unless value?
+  if Array.isArray type
+    return checkTypes value, type
+
+  if not value?
     return no
 
-  return type is getConstructor value
+  return type is value.constructor
 
-isTypeish = (value, types) ->
-  return yes for type in types when isType value, type
+checkTypes = (value, types) ->
+
+  for type in types
+
+    if type instanceof Validator
+      return yes if type.test value
+
+    if value?
+      return yes if type is value.constructor
+
   return no
