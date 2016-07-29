@@ -1,7 +1,6 @@
 
 Validator = require "Validator"
 
-module.exports =
 isType = (value, type) ->
 
   if type instanceof Validator
@@ -15,9 +14,18 @@ isType = (value, type) ->
 
   return type is value.constructor
 
-checkTypes = (value, types) ->
+module.exports = isType
 
-  for type in types
+#
+# Helpers
+#
+
+checkTypes = (value, types) ->
+  numTypes = types.length
+
+  index = -1
+  while ++index < numTypes
+    type = types[index]
 
     if type instanceof Validator
       return yes if type.test value
