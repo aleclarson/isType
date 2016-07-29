@@ -33,4 +33,4 @@ checkTypes = function(value, types) {
   return false;
 };
 
-//# sourceMappingURL=../../map/src/isType.map
+//# sourceMappingURL=map/isType.map
