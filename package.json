@@ -1,13 +1,8 @@
 {
   "name": "isType",
   "version": "1.0.0",
-  "main": "js/isType",
+  "main": "isType.js",
   "dependencies": {
     "Validator": "aleclarson/Validator#1.1.0"
-  },
-  "lotus": {
-    "plugins": [
-      "lotus-coffee"
-    ]
   }
 }
