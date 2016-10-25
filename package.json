@@ -3,6 +3,6 @@
   "version": "1.0.0",
   "main": "isType.js",
   "dependencies": {
-    "Validator": "aleclarson/Validator#1.1.0"
+    "Validator": "aleclarson/Validator#1.1.1"
   }
 }
