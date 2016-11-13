@@ -1,6 +1,6 @@
 {
   "name": "isType",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "isType.js",
   "dependencies": {
     "Validator": "aleclarson/Validator#1.1.1"
