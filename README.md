@@ -1,5 +1,5 @@
 
-# isType v1.0.1 ![stable](https://img.shields.io/badge/stability-stable-4EBA0F.svg?style=flat)
+# isType v1.0.2 ![stable](https://img.shields.io/badge/stability-stable-4EBA0F.svg?style=flat)
 
 Returns `true` if the value's type is the given type.
 
